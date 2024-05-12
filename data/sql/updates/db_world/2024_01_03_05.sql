@@ -1,20 +1,4 @@
 
--- 1成就汉化--没问题
-UPDATE achievement_reward
-SET Subject = IFNULL(
-    (SELECT Subject
-    FROM achievement_reward_locale
-    WHERE achievement_reward_locale.locale = 'zhCN'
-    AND achievement_reward_locale.ID = achievement_reward.ID),
-    ''
-),
-Body = IFNULL(
-    (SELECT Text
-    FROM achievement_reward_locale
-    WHERE achievement_reward_locale.locale = 'zhCN'
-    AND achievement_reward_locale.ID = achievement_reward.ID),
-    ''
-);
 
 -- 2生物喊话汉化--可以
 UPDATE broadcast_text
